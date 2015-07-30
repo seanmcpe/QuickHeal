@@ -1,0 +1,6 @@
+QuickHeal
+main: Sean_M\QuickHeal\Main
+version: "1.0.0"
+api: [1.0.0]
+description:
+author: Sean_M
