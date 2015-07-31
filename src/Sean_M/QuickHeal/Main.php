@@ -59,6 +59,7 @@ class Main extends PluginBase implements Listener{
                  $c = 1;
                  $b = Item::get($id, $d, $c);
                  $p->getInventory()->addItem($b);
-
+          }else{
+// Add later.
      }
 }
