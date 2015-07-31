@@ -30,43 +30,42 @@ class Main extends PluginBase implements Listener{
      public function onInteract(PlayerInteractEvent $event){
 // Item naming and enchantments will be in QuickHeal v1.5.0 — coming once MCPE v0.12 is publicly released.
         $config = $this->getConfig();
-        $p = $event->getPlayer();
-        $i = $config->get("id");
-        $ph = $p->getHealth();
-        $h = $config->get("health");
-        $sh = $ph + $h;
-          if($i == "282" and $ph !== 20){
-// Thank you, xFlare, for helping me with the next four lines!
+        $player = $event->getPlayer();
+        $item = $config->get("id");
+        $playerhealth = $p->getHealth();
+        $health = $config->get("health");
+        $sethealth = $ph + $h;
+          if($item == "282" and $playerhealth !== 20){
             $id = 282;
-            $d = 0;
-            $c = 1;
-            $ms = Item::get($id, $d, $c);
-            $p->setHealth($sh);
-            $p->getInventory()->removeItem($ms);
+            $damage = 0;
+            $count = 1;
+            $mstew = Item::get($id, $damage, $count);
+            $player->setHealth($sethealth);
+            $player->getInventory()->removeItem($mstew);
             $id = 281;
-            $d = 0;
-            $c = 1;
-            $b = Item::get($id, $d, $c);
-            $p->getInventory()->addItem($b);
-               if($i == "459" and $ph !== 20){
+            $damage = 0;
+            $count = 1;
+            $bowl = Item::get($id, $damage, $count);
+            $player->getInventory()->addItem($bowl);
+               if($item == "459" and $playerhealth !== 20){
                  $id = 459;
-                 $d = 0;
-                 $c = 1;
-                 $bs = Item::get($id, $d, $c);
-                 $p->setHealth($sh);
-                 $p->getInventory()->removeItem($bs);
+                 $damage = 0;
+                 $count = 1;
+                 $bstew = Item::get($id, $damage, $count);
+                 $player->setHealth($sethealth);
+                 $player->getInventory()->removeItem($bstew);
                  $id = 281;
-                 $d = 0;
-                 $c = 1;
-                 $b = Item::get($id, $d, $c);
-                 $p->getInventory()->addItem($b);
+                 $damage = 0;
+                 $count = 1;
+                 $bowl = Item::get($id, $damage, $count);
+                 $player->getInventory()->addItem($bowl);
           }else{
-        if($i !== "282" or "459"){
-          $d = 0;
-          $c = 1;
-          $x = Item::get($i, $d, $c);
-          $p->setHealth($sh);  
-          $p->getInventory()->removeItem($bs);
+        if($item !== "282" or "459"){
+          $damage = 0;
+          $count = 1;
+          $item = Item::get($i, $damage, $count);
+          $player->setHealth($sethealth);  
+          $player->getInventory()->removeItem($item);
 // Implement custom addItem code in the future.
             }
          } 
