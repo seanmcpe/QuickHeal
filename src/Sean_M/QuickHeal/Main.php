@@ -34,7 +34,7 @@ class Main extends PluginBase implements Listener{
         $item = $config->get("id");
         $playerhealth = $p->getHealth();
         $health = $config->get("health");
-        $sethealth = $ph + $h;
+        $sethealth = $playerhealth + $health;
           if($item == "282" and $playerhealth !== 20){
             $id = 282;
             $damage = 0;
