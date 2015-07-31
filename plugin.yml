@@ -2,5 +2,5 @@ QuickHeal
 main: Sean_M\QuickHeal\Main
 version: "1.0.0"
 api: [1.0.0]
-description:
+description: Heals player upon tapping an item on the ground.
 author: Sean_M
