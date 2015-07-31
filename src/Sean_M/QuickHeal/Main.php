@@ -65,7 +65,7 @@ class Main extends PluginBase implements Listener{
           $count = 1;
           $itemusing = Item::get($item, $damage, $count);
           $player->setHealth($sethealth);  
-          $player->getInventory()->removeItem($item);
+          $player->getInventory()->removeItem($itemusing);
 // Implement custom addItem code in the future.
             }
          } 
