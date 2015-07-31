@@ -33,7 +33,7 @@ class Main extends PluginBase implements Listener{
         $i = $config->get("id");
         $ph = $p->getHealth();
         $h = $config->get("health");
-        $sh = $ph + $h
+        $sh = $ph + $h;
           if($i == "282" and $ph !== 20){
 // Thank you, xFlare, for helping me with the next four lines!
             $id = 282;
@@ -61,5 +61,7 @@ class Main extends PluginBase implements Listener{
                  $p->getInventory()->addItem($b);
           }else{
 // Add later.
-     }
-}
+         }
+      }
+   }
+}  
