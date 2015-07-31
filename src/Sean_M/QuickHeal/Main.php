@@ -4,10 +4,9 @@ namespace Sean_M\QuickHeal;
 use pocketmine\Server;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
+use pocketmine\utils\TextFormat;
 use pocketmine\Player;
 use pocketmine\event\player\PlayerInteractEvent;
-use pocketmine\Item;
-use pocketmine\utils\TextFormat;
 
 class Main extends PluginBase implements Listener{
 
