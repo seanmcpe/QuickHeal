@@ -35,8 +35,30 @@ class Main extends PluginBase implements Listener{
         $h = $config->get("health");
         $sh = $ph + $h
           if($i == "282" and $ph !== 20){
-            $ms = 282;
-              $p->setHealth($sh);
+// Thank you, xFlare, for helping me with the next four lines!
+            $id = 282;
+            $d = 0;
+            $c = 1;
+            $ms = Item::get($id, $d, $c);
+            $p->setHealth($sh);
+            $p->getInventory()->removeItem($ms);
+            $id = 281;
+            $d = 0;
+            $c = 1;
+            $b = Item::get($id, $d, $c);
+            $p->getInventory()->addItem($b);
+               if($i == "459" and $ph !== 20){
+                 $id = 459;
+                 $d = 0;
+                 $c = 1;
+                 $bs = Item::get($id, $d, $c);
+                 $p->setHealth($sh);
+                 $p->getInventory()->removeItem($bs);
+                 $id = 281;
+                 $d = 0;
+                 $c = 1;
+                 $b = Item::get($id, $d, $c);
+                 $p->getInventory()->addItem($b);
 
      }
 }
