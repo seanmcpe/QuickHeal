@@ -32,8 +32,12 @@ class Main extends PluginBase implements Listener{
         $p = $event->getPlayer();
         $i = $config->get("id");
         $ph = $p->getHealth();
-          if($i == "282" or $i == "459"){
-          if($ph !== 20){
+        $h = $config->get("health");
+        $sh = $ph + $h
+          if($i == "282" and $ph !== 20){
+            $ms = 282;
+              $player->setHealth($sh);
+            
         
 
      }
