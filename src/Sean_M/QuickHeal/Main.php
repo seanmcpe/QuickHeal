@@ -1,5 +1,5 @@
 <?php
-namespace Sean_M\DeathKick;
+namespace Sean_M\QuickHeal;
 
 use pocketmine\Server;
 use pocketmine\plugin\PluginBase;
