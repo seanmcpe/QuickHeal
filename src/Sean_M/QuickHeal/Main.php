@@ -63,7 +63,7 @@ class Main extends PluginBase implements Listener{
         if($item !== "282" or "459"){
           $damage = 0;
           $count = 1;
-          $item = Item::get($i, $damage, $count);
+          $itemusing = Item::get($item, $damage, $count);
           $player->setHealth($sethealth);  
           $player->getInventory()->removeItem($item);
 // Implement custom addItem code in the future.
