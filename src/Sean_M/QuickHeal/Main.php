@@ -28,7 +28,13 @@ class Main extends PluginBase implements Listener{
      }
 
      public function onInteract(PlayerInteractEvent $event){
+        $config = $this->getConfig();
         $p = $event->getPlayer();
+        $i = $config->get("id");
+        $ph = $p->getHealth();
+          if($i == "282" or $i == "459"){
+          if($ph !== 20){
+        
 
      }
 }
