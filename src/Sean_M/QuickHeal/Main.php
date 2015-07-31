@@ -36,9 +36,7 @@ class Main extends PluginBase implements Listener{
         $sh = $ph + $h
           if($i == "282" and $ph !== 20){
             $ms = 282;
-              $player->setHealth($sh);
-            
-        
+              $p->setHealth($sh);
 
      }
 }
