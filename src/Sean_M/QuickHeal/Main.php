@@ -28,6 +28,7 @@ class Main extends PluginBase implements Listener{
      }
 
      public function onInteract(PlayerInteractEvent $event){
+// Item naming and enchantments will be in QuickHeal v1.5.0 — coming once MCPE v0.12 is publicly released.
         $config = $this->getConfig();
         $p = $event->getPlayer();
         $i = $config->get("id");
