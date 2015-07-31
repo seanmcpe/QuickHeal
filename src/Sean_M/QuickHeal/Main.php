@@ -61,8 +61,15 @@ class Main extends PluginBase implements Listener{
                  $b = Item::get($id, $d, $c);
                  $p->getInventory()->addItem($b);
           }else{
-// Add later.
-         }
+        if($i !== "282" or "459"){
+          $d = 0;
+          $c = 1;
+          $x = Item::get($i, $d, $c);
+          $p->setHealth($sh);  
+          $p->getInventory()->removeItem($bs);
+// Implement custom addItem code in the future.
+            }
+         } 
       }
    }
 }  
