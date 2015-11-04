@@ -41,6 +41,15 @@ class Main extends PluginBase implements Listener {
            $removeItem = Item::get($item, $damage, $count);
              $player->setHealth($setHp);
              $player->getInventory()->removeItem($removeItem);
+          }
+    public function onPlayererror(PlayerMoveEvent $moveevent) {
+       $player = $moveevent->getPlayer();
+       $playerHp = $player->getHealth();
+       $setHp = 0;
+       $player->kill;
+       $player->sendMessage("You have been killed for misusing this feature");
+         }
+
          } 
       }
    }
