@@ -7,6 +7,7 @@ use pocketmine\event\Listener;
 use pocketmine\utils\TextFormat;
 use pocketmine\Player;
 use pocketmine\event\player\PlayerInteractEvent;
+use pocketmine\network\protocol\SetHealthPacket;
 
 class Main extends PluginBase implements Listener {
 
@@ -34,12 +35,13 @@ class Main extends PluginBase implements Listener {
         $item = $config->get("id");
         $playerHp = $player->getHealth();
         $health = $config->get("health");
-        $setHp = $playerHp + $health;
+        $healthPk = new SetHealthPacket();
+        $setHp->health = $playerHp + $health;
           if($playerHp <= $player->getMaxHealth()) {
              $damage = 0;
              $count = 1;
              $removeItem = Item::get($item, $damage, $count);
-                $player->setHealth($setHp);
+                $player->dataPacket($setHp);
                 $player->getInventory()->removeItem($removeItem);
           } 
      }
