@@ -29,19 +29,18 @@ class Main extends PluginBase implements Listener {
 
      public function onInteract(PlayerInteractEvent $event) {
 // Proper item naming and enchantments will be in QuickHeal v1.5.0 — coming once PocketMine implements naming & enchantments.
-       $config = $this->getConfig();
-       $player = $event->getPlayer();
-       $item = $config->get("id");
-       $playerHp = $player->getHealth();
-       $health = $config->get("health");
-       $setHp = $playerHp + $health;
-         if($playerHp <= 20) {
-           $damage = 0;
-           $count = 1;
-           $removeItem = Item::get($item, $damage, $count);
-             $player->setHealth($setHp);
-             $player->getInventory()->removeItem($removeItem);
-         } 
-      }
-   }
+        $config = $this->getConfig();
+        $player = $event->getPlayer();
+        $item = $config->get("id");
+        $playerHp = $player->getHealth();
+        $health = $config->get("health");
+        $setHp = $playerHp + $health;
+          if($playerHp <= $player->getMaxHealth()) {
+             $damage = 0;
+             $count = 1;
+             $removeItem = Item::get($item, $damage, $count);
+                $player->setHealth($setHp);
+                $player->getInventory()->removeItem($removeItem);
+          } 
+     }
 }  
